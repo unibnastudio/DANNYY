@@ -95,7 +95,7 @@
     <div class="popup-box envelope-popup">
       <button class="close" onclick="closePopup('popup2')">×</button>
 
-      <h2>something I made for you </h2>
+      <h2>something I made for you 💌</h2>
 
       <div class="envelope" onclick="openEnvelope()">
         <div class="flap"></div>
@@ -105,13 +105,13 @@
         <img src="danny-drawing.png" alt="Drawing of Danny">
 
         <p>
-          happy birthday 
+          happy birthday ♡
           <br>
-          i wanted to draw you haha
+          i wanted to draw you.
         </p>
       </div>
 
-      <p class="tap-note">tap the envelope </p>
+      <p class="tap-note">tap the envelope ✨</p>
     </div>
   </div>
 
@@ -133,32 +133,31 @@
   </div>
 
   <div class="popup" id="popup4">
-    <div class="popup-box">
+    <div class="popup-box mirror-popup">
       <button class="close" onclick="closePopup('popup4')">×</button>
 
-      <h2>random facts ⭐</h2>
+      <h2>mirror check ⭐</h2>
 
-      <p>
-        • certified birthday boy
-        <br><br>
-        • somehow makes things more fun
-        <br><br>
-        • deserves extra cake today
-      </p>
+      <div class="mirror">
+        <div class="mirror-shine"></div>
+        <p>handsome birthday boy detected</p>
+      </div>
+
+      <button onclick="mirrorSparkle()">scan again ✨</button>
     </div>
   </div>
 
   <div class="popup" id="popup5">
-    <div class="popup-box">
+    <div class="popup-box ramen-popup">
       <button class="close" onclick="closePopup('popup5')">×</button>
 
-      <h2>birthday wish 🧁</h2>
+      <h2>birthday fortune 🧁</h2>
 
-      <p>
-        may all your wishes come true,
-        and may this year be even better
-        than the last ♡
-      </p>
+      <div class="ramen-bowl">🍜</div>
+
+      <p id="fortuneText">click for your birthday fortune</p>
+
+      <button onclick="showFortune()">open fortune 🥢</button>
     </div>
   </div>
 

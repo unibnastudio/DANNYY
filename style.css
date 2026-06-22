@@ -35,41 +35,14 @@ section {
   border-radius: 999px;
 }
 
-/* MAGAZINE CUTOUT TITLE */
+/* BIRTHDAY BANNER */
 
-.cutout-title {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  align-items: center;
+.birthday-banner {
+  width: min(90vw, 800px);
+  height: auto;
   margin: 25px 0;
-  animation: bounceIn 1.5s ease;
-}
-
-.word {
-  display: flex;
-  gap: 7px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.word img {
-  height: 72px;
-  object-fit: contain;
-  filter: drop-shadow(3px 5px 2px rgba(0,0,0,.18));
-  animation: letterFloat 2.5s ease-in-out infinite;
-}
-
-.word img:nth-child(2n) {
-  transform: rotate(-5deg);
-}
-
-.word img:nth-child(3n) {
-  transform: rotate(5deg);
-}
-
-.word img:nth-child(4n) {
-  transform: rotate(-8deg);
+  filter: drop-shadow(5px 8px 4px rgba(0,0,0,.18));
+  animation: bannerFloat 3s ease-in-out infinite;
 }
 
 /* BUTTONS */
@@ -91,7 +64,7 @@ button:hover {
   background: #ff5fa8;
 }
 
-/* CARD SECTION */
+/* CARD */
 
 .card {
   background: rgba(255,255,255,0.75);
@@ -111,7 +84,7 @@ button:hover {
   font-size: 38px;
 }
 
-/* BIG SCATTERED STICKERS */
+/* STICKERS */
 
 .gift-grid {
   position: relative;
@@ -123,8 +96,8 @@ button:hover {
 
 .gift {
   position: absolute;
-  width: 170px;
-  height: 170px;
+  width: 180px;
+  height: 180px;
   padding: 0;
   background: transparent;
   box-shadow: none;
@@ -132,8 +105,8 @@ button:hover {
 }
 
 .gift img {
-  width: 170px;
-  height: 170px;
+  width: 180px;
+  height: 180px;
   object-fit: contain;
   filter: drop-shadow(4px 8px 4px rgba(0,0,0,.18));
   transition: .4s;
@@ -289,7 +262,7 @@ button:hover {
   width: 100%;
   height: 100%;
   background: #ff78b7;
-  clip-path: polygon(0 0, 50% 55%, 100% 0);
+  clip-path: polygon(0 0,50% 55%,100% 0);
   transform-origin: top;
   transition: .8s;
   z-index: 3;
@@ -338,7 +311,6 @@ button:hover {
   top: -20px;
   font-size: 22px;
   animation: fall linear forwards;
-  z-index: 1;
   pointer-events: none;
 }
 
@@ -361,25 +333,36 @@ button:hover {
 
 /* ANIMATIONS */
 
-@keyframes bounceIn {
-  0% { transform: scale(.5); opacity: 0; }
-  70% { transform: scale(1.08); opacity: 1; }
-  100% { transform: scale(1); }
-}
+@keyframes bannerFloat {
+  0%,100% {
+    transform: translateY(0) rotate(-1deg);
+  }
 
-@keyframes letterFloat {
-  0%, 100% { translate: 0 0; }
-  50% { translate: 0 -7px; }
+  50% {
+    transform: translateY(-10px) rotate(1deg);
+  }
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-15px); }
+  0%,100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-15px);
+  }
 }
 
 @keyframes pop {
-  from { transform: scale(.7); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
+  from {
+    transform: scale(.7);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 @keyframes fall {
@@ -403,11 +386,12 @@ button:hover {
   }
 }
 
-/* PHONE VERSION */
+/* PHONE */
 
-@media (max-width: 600px) {
-  .word img {
-    height: 48px;
+@media (max-width:600px) {
+
+  .birthday-banner {
+    width: 95vw;
   }
 
   .gift-grid {
@@ -416,13 +400,13 @@ button:hover {
   }
 
   .gift {
-    width: 135px;
-    height: 135px;
+    width: 140px;
+    height: 140px;
   }
 
   .gift img {
-    width: 135px;
-    height: 135px;
+    width: 140px;
+    height: 140px;
   }
 
   .gift:nth-child(1) {

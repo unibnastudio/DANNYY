@@ -287,27 +287,33 @@ button:hover {
 
 .envelope.open {
   opacity: 0;
-  pointer-events: none;
   height: 0;
   margin: 0 auto;
   overflow: hidden;
+  pointer-events: none;
 }
 
 /* DRAWING CARD */
 
 .drawing-card {
-  display: none;
   width: min(310px, 82vw);
-  max-height: 65vh;
-  overflow-y: auto;
-  margin: 25px auto 0;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  margin: 0 auto;
   background: #fffdf9;
-  padding: 16px 16px 22px;
   border-radius: 8px;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
-  animation: polaroidPop 0.7s ease;
   transform: rotate(-2deg);
   position: relative;
+  transition: 0.7s ease;
+}
+
+.envelope.open + .drawing-card {
+  max-height: 700px;
+  opacity: 1;
+  padding: 16px 16px 22px;
+  margin-top: 25px;
 }
 
 .drawing-card::before,
@@ -334,7 +340,7 @@ button:hover {
 .drawing-card img {
   display: block;
   width: 100%;
-  max-height: 380px;
+  max-height: 350px;
   object-fit: contain;
   border-radius: 6px;
 }
@@ -345,9 +351,7 @@ button:hover {
   font-size: 15px;
   line-height: 1.5;
 }
-.drawing-card.show {
-  display: block;
-}
+
 .tap-note {
   opacity: 0.7;
   font-size: 14px;
@@ -413,18 +417,6 @@ button:hover {
 
   to {
     transform: scale(1);
-    opacity: 1;
-  }
-}
-
-@keyframes polaroidPop {
-  from {
-    transform: scale(0.7) rotate(-6deg);
-    opacity: 0;
-  }
-
-  to {
-    transform: scale(1) rotate(-2deg);
     opacity: 1;
   }
 }
@@ -521,7 +513,6 @@ button:hover {
 
   .drawing-card {
     width: min(260px, 78vw);
-    max-height: 58vh;
   }
 
   .drawing-card img {

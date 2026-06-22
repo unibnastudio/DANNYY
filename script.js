@@ -46,6 +46,7 @@ function confetti() {
     piece.innerText = icons[Math.floor(Math.random() * icons.length)];
     piece.style.left = Math.random() * 100 + "vw";
     piece.style.animationDuration = Math.random() * 2 + 2 + "s";
+
     document.body.appendChild(piece);
 
     setTimeout(() => {

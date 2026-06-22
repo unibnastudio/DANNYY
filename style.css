@@ -5,7 +5,7 @@
 body {
   margin: 0;
   font-family: "Trebuchet MS", sans-serif;
-  background: linear-gradient(135deg, #ffd6e8, #fff1f8, #dff7ff);
+  background: linear-gradient(135deg, #fff7ef, #ffd6e8, #dff7ff);
   color: #5c3a4d;
   overflow-x: hidden;
 }
@@ -19,14 +19,7 @@ section {
   flex-direction: column;
 }
 
-.hero h1 {
-  font-size: clamp(45px, 9vw, 95px);
-  text-align: center;
-  margin: 10px 0;
-  color: #ff6fae;
-  text-shadow: 3px 3px #fff;
-  animation: bounceIn 1.5s ease;
-}
+/* HERO */
 
 .tiny {
   letter-spacing: 3px;
@@ -37,7 +30,49 @@ section {
 .subtitle {
   font-size: 22px;
   text-align: center;
+  background: rgba(255,255,255,.55);
+  padding: 12px 22px;
+  border-radius: 999px;
 }
+
+/* MAGAZINE CUTOUT TITLE */
+
+.cutout-title {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+  margin: 25px 0;
+  animation: bounceIn 1.5s ease;
+}
+
+.word {
+  display: flex;
+  gap: 7px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.word img {
+  height: 72px;
+  object-fit: contain;
+  filter: drop-shadow(3px 5px 2px rgba(0,0,0,.18));
+  animation: letterFloat 2.5s ease-in-out infinite;
+}
+
+.word img:nth-child(2n) {
+  transform: rotate(-5deg);
+}
+
+.word img:nth-child(3n) {
+  transform: rotate(5deg);
+}
+
+.word img:nth-child(4n) {
+  transform: rotate(-8deg);
+}
+
+/* BUTTONS */
 
 button {
   border: none;
@@ -55,6 +90,8 @@ button:hover {
   transform: scale(1.08) rotate(-2deg);
   background: #ff5fa8;
 }
+
+/* CARD SECTION */
 
 .card {
   background: rgba(255,255,255,0.75);
@@ -74,30 +111,62 @@ button:hover {
   font-size: 38px;
 }
 
+/* BIG SCATTERED STICKERS */
+
 .gift-grid {
-  margin-top: 35px;
-  display: grid;
-  grid-template-columns: repeat(4, 80px);
-  gap: 20px;
+  position: relative;
+  width: 650px;
+  height: 460px;
+  max-width: 95vw;
+  margin-top: 50px;
 }
 
 .gift {
-  width: 80px;
-  height: 80px;
-  padding: 8px;
-  background: white;
+  position: absolute;
+  width: 170px;
+  height: 170px;
+  padding: 0;
+  background: transparent;
+  box-shadow: none;
   animation: float 2.5s ease-in-out infinite;
 }
 
 .gift img {
-  width: 60px;
-  height: 60px;
+  width: 170px;
+  height: 170px;
   object-fit: contain;
+  filter: drop-shadow(4px 8px 4px rgba(0,0,0,.18));
+  transition: .4s;
 }
 
-.gift:nth-child(2) { animation-delay: .3s; }
-.gift:nth-child(3) { animation-delay: .6s; }
-.gift:nth-child(4) { animation-delay: .9s; }
+.gift img:hover {
+  transform: rotate(-8deg) scale(1.12);
+}
+
+.gift:nth-child(1) {
+  top: 0;
+  left: 230px;
+}
+
+.gift:nth-child(2) {
+  top: 165px;
+  left: 20px;
+  animation-delay: .3s;
+}
+
+.gift:nth-child(3) {
+  top: 135px;
+  right: 20px;
+  animation-delay: .6s;
+}
+
+.gift:nth-child(4) {
+  bottom: 0;
+  left: 240px;
+  animation-delay: .9s;
+}
+
+/* CAKE */
 
 .cake {
   font-size: 120px;
@@ -139,6 +208,8 @@ button:hover {
   font-size: 20px;
 }
 
+/* FINAL */
+
 .final {
   text-align: center;
 }
@@ -151,6 +222,8 @@ button:hover {
   padding: 30px;
   border-radius: 25px;
 }
+
+/* POPUPS */
 
 .popup {
   position: fixed;
@@ -193,6 +266,8 @@ button:hover {
   background: #ffd6e8;
   color: #ff4f9d;
 }
+
+/* ENVELOPE */
 
 .envelope-popup {
   max-width: 450px;
@@ -256,6 +331,8 @@ button:hover {
   font-size: 14px;
 }
 
+/* FLOATING EFFECTS */
+
 .heart {
   position: fixed;
   top: -20px;
@@ -282,10 +359,17 @@ button:hover {
   z-index: 100;
 }
 
+/* ANIMATIONS */
+
 @keyframes bounceIn {
   0% { transform: scale(.5); opacity: 0; }
   70% { transform: scale(1.08); opacity: 1; }
   100% { transform: scale(1); }
+}
+
+@keyframes letterFloat {
+  0%, 100% { translate: 0 0; }
+  50% { translate: 0 -7px; }
 }
 
 @keyframes float {
@@ -319,9 +403,46 @@ button:hover {
   }
 }
 
+/* PHONE VERSION */
+
 @media (max-width: 600px) {
+  .word img {
+    height: 48px;
+  }
+
   .gift-grid {
-    grid-template-columns: repeat(2, 80px);
+    width: 340px;
+    height: 420px;
+  }
+
+  .gift {
+    width: 135px;
+    height: 135px;
+  }
+
+  .gift img {
+    width: 135px;
+    height: 135px;
+  }
+
+  .gift:nth-child(1) {
+    top: 0;
+    left: 100px;
+  }
+
+  .gift:nth-child(2) {
+    top: 150px;
+    left: 0;
+  }
+
+  .gift:nth-child(3) {
+    top: 130px;
+    right: 0;
+  }
+
+  .gift:nth-child(4) {
+    bottom: 0;
+    left: 100px;
   }
 
   .cake {

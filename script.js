@@ -22,7 +22,7 @@ function blowCandles() {
 
 function showFortune() {
   const fortunes = [
-    "extra cake is mandatory.",
+    "extra cake is a must.",
     "unlmited wishes.",
     "more cake."
   ];
@@ -94,10 +94,10 @@ document.addEventListener("mousemove", function (e) {
 
   sparkle.style.top = e.clientY + "px";
 
-  document.body.appendChild(sparkle);
+  document.body.appendChild(cake);
 
   setTimeout(() => {
-    sparkle.remove();
+    cake.remove();
   }, 800);
 });
 

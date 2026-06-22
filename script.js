@@ -4,10 +4,19 @@ function openPopup(id) {
 }
 
 function closePopup(id) {
-  document.getElementById(id).style.display = "none";
-}
+  const popup = document.getElementById(id);
+  popup.style.display = "none";
 
-// ENVELOPE
+  if (id === "popup2") {
+    const envelope = document.querySelector(".envelope");
+    const drawingCard = document.querySelector(".drawing-card");
+    const tapNote = document.querySelector(".tap-note");
+
+    envelope.classList.remove("open");
+    drawingCard.classList.remove("show");
+    tapNote.style.display = "block";
+  }
+}
 
 function openEnvelope() {
   const envelope = document.querySelector(".envelope");
@@ -17,38 +26,27 @@ function openEnvelope() {
   envelope.classList.add("open");
 
   setTimeout(() => {
-    drawingCard.style.display = "block";
+    drawingCard.classList.add("show");
     tapNote.style.display = "none";
   }, 500);
 }
 
-// CAKE
-
 function blowCandles() {
   document.querySelector(".candles").classList.add("out");
-
   document.getElementById("wishText").innerText =
     "wish made. i hope it comes true ♡";
-
   confetti();
 }
 
-// FLOATING HEARTS
-
 function createHeart() {
   const heart = document.createElement("div");
-
   heart.className = "heart";
 
   const icons = ["♡", "💗", "✨", "🌸", "⭐", "🫧"];
-
-  heart.innerText =
-    icons[Math.floor(Math.random() * icons.length)];
+  heart.innerText = icons[Math.floor(Math.random() * icons.length)];
 
   heart.style.left = Math.random() * 100 + "vw";
-
-  heart.style.animationDuration =
-    Math.random() * 3 + 4 + "s";
+  heart.style.animationDuration = Math.random() * 3 + 4 + "s";
 
   document.body.appendChild(heart);
 
@@ -59,23 +57,15 @@ function createHeart() {
 
 setInterval(createHeart, 500);
 
-// CONFETTI
-
 function confetti() {
   const icons = ["🎉", "💖", "✨", "🌷", "⭐", "🧁"];
 
   for (let i = 0; i < 35; i++) {
     const piece = document.createElement("div");
-
     piece.className = "confetti";
-
-    piece.innerText =
-      icons[Math.floor(Math.random() * icons.length)];
-
+    piece.innerText = icons[Math.floor(Math.random() * icons.length)];
     piece.style.left = Math.random() * 100 + "vw";
-
-    piece.style.animationDuration =
-      Math.random() * 2 + 2 + "s";
+    piece.style.animationDuration = Math.random() * 2 + 2 + "s";
 
     document.body.appendChild(piece);
 
@@ -85,17 +75,11 @@ function confetti() {
   }
 }
 
-// MOUSE SPARKLES
-
 document.addEventListener("mousemove", function (e) {
   const sparkle = document.createElement("div");
-
   sparkle.className = "sparkle";
-
   sparkle.innerText = "✨";
-
   sparkle.style.left = e.clientX + "px";
-
   sparkle.style.top = e.clientY + "px";
 
   document.body.appendChild(sparkle);
@@ -104,8 +88,6 @@ document.addEventListener("mousemove", function (e) {
     sparkle.remove();
   }, 800);
 });
-
-// CLOSE POPUP IF CLICKING OUTSIDE
 
 window.addEventListener("click", function (event) {
   const popups = document.querySelectorAll(".popup");

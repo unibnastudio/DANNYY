@@ -40,7 +40,7 @@ function createHeart() {
 
   heart.className = "heart";
 
-  const icons = ["♡", "💗", "✨", "🌸", "⭐", "🫧"];
+  const icons = ["💗", "✨", "🌸", "⭐", "🫧"];
 
   heart.innerText =
     icons[Math.floor(Math.random() * icons.length)];

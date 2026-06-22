@@ -29,11 +29,11 @@
 
     <div class="gift-grid">
       <button class="gift" onclick="openPopup('popup2')">
-        <img src="card.png" alt="present icon">
+        <img src="card.png" alt="card icon">
       </button>
 
       <button class="gift" onclick="openPopup('popup3')">
-        <img src="present.png" alt="flower icon">
+        <img src="present.png" alt="present icon">
       </button>
 
       <button class="gift" onclick="openPopup('popup4')">
@@ -61,80 +61,66 @@
 
   <section class="final">
     <h2>Danny</h2>
-    <p>
-
-    </p>
+    <p></p>
     <button onclick="confetti()">birthday confetti ✨</button>
   </section>
 
   <div class="popup" id="popup1">
+    <div class="popup-box">
+      <button class="close" onclick="closePopup('popup1')">×</button>
 
-  <div class="popup-box">
-
-    <button class="close" onclick="closePopup('popup1')">×</button>
-
-    <h2>hi dan dani</h2>
-
-    <p>
-      i know this is way too sentimental and overboard
-      <br><br>
-      but this song reminds me of u hella
-    </p>
-
-    <iframe
-      data-testid="embed-iframe"
-      style="border-radius:12px"
-      src="https://open.spotify.com/embed/track/4tTQltBsuAIMS8n8oMw3ds?utm_source=generator&theme=0&si=4be5fb6705f84ad4"
-      width="100%"
-      height="152"
-      frameborder="0"
-      allowfullscreen=""
-      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-      loading="lazy">
-    </iframe>
-
-  </div>
-
-</div>
-
-  <div class="popup" id="popup2">
-
-  <div class="popup-box envelope-popup">
-
-    <button class="close" onclick="closePopup('popup2')">×</button>
-
-    <h2>something I made for you 💌</h2>
-
-    <div class="envelope" onclick="openEnvelope()">
-
-      <div class="flap"></div>
-
-    </div>
-
-    <div class="drawing-card">
-
-      <img src="danny-drawing.png" alt="Drawing of Danny">
+      <h2>hi dan dani</h2>
 
       <p>
-        happy birthday ♡
-        <br>
-        i wanted to draw you.
+        i know this is way too sentimental and overboard
+        <br><br>
+        but this song reminds me of u hella
       </p>
 
+      <iframe
+        data-testid="embed-iframe"
+        style="border-radius:12px"
+        src="https://open.spotify.com/embed/track/4tTQltBsuAIMS8n8oMw3ds?utm_source=generator&theme=0&si=4be5fb6705f84ad4"
+        width="100%"
+        height="152"
+        frameborder="0"
+        allowfullscreen=""
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+        loading="lazy">
+      </iframe>
     </div>
-
-    <p class="tap-note">
-      tap the envelope ✨
-    </p>
-
   </div>
 
-</div>
+  <div class="popup" id="popup2">
+    <div class="popup-box envelope-popup">
+      <button class="close" onclick="closePopup('popup2')">×</button>
+
+      <h2>something I made for you 💌</h2>
+
+      <div class="envelope" onclick="openEnvelope()">
+        <div class="flap"></div>
+      </div>
+
+      <div class="drawing-card">
+        <img src="danny-drawing.png" alt="Drawing of Danny">
+
+        <p>
+          happy birthday ♡
+          <br>
+          i wanted to draw you.
+        </p>
+      </div>
+
+      <p class="tap-note">tap the envelope ✨</p>
+    </div>
+  </div>
 
   <div class="popup" id="popup3">
     <div class="popup-box">
       <button class="close" onclick="closePopup('popup3')">×</button>
-      <h2></h2>
+
+      <h2>for you</h2>
+
       <p>
         i've not known you for super long but i think very highly of you
         and think you deserve the world. i genuinely hope i didn't overwhelm 
@@ -142,7 +128,6 @@
         for you although this might be a bit cheesy or a tad bit corny idrc i enjoyed
         making this for you. i genuinely hope you get all you want in life and to be
         very happy. May Allah bless you and your family abundantly. hehe
-    </p>
       </p>
     </div>
   </div>
@@ -150,7 +135,9 @@
   <div class="popup" id="popup4">
     <div class="popup-box">
       <button class="close" onclick="closePopup('popup4')">×</button>
+
       <h2>random facts ⭐</h2>
+
       <p>
         • certified birthday boy
         <br><br>
@@ -164,7 +151,9 @@
   <div class="popup" id="popup5">
     <div class="popup-box">
       <button class="close" onclick="closePopup('popup5')">×</button>
+
       <h2>birthday wish 🧁</h2>
+
       <p>
         may all your wishes come true,
         and may this year be even better

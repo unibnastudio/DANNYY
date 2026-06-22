@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday Danny ♡</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="floating-bg"></div>
+
+  <section class="hero">
+    <p class="tiny">psst... this is for you</p>
+    <h1>Happy Birthday, Danny ♡</h1>
+    <p class="subtitle">I made you a tiny little birthday world.</p>
+    <button onclick="openPopup('popup1')">open your first surprise 💌</button>
+  </section>
+
+  <section class="card-section">
+    <div class="card">
+      <h2>birthday mission 🎂</h2>
+      <p>Click the little gifts and collect your cute messages.</p>
+    </div>
+
+    <div class="gift-grid">
+      <button class="gift" onclick="openPopup('popup2')">🎁</button>
+      <button class="gift" onclick="openPopup('popup3')">🌷</button>
+      <button class="gift" onclick="openPopup('popup4')">⭐</button>
+      <button class="gift" onclick="openPopup('popup5')">🧁</button>
+    </div>
+  </section>
+
+  <section class="cake-section">
+    <h2>make a wish</h2>
+    <div class="cake" onclick="blowCandles()">
+      <div class="candles">
+        <span></span><span></span><span></span>
+      </div>
+      🎂
+    </div>
+    <p id="wishText">tap the cake to blow out the candles</p>
+  </section>
+
+  <section class="final">
+    <h2>one last thing...</h2>
+    <p>
+      I hope your birthday feels soft, happy, and full of all the good things you deserve.
+      You’re special, Danny. Don’t forget that. ♡
+    </p>
+    <button onclick="confetti()">birthday confetti ✨</button>
+  </section>
+
+  <div class="popup" id="popup1">
+    <div class="popup-box">
+      <button class="close" onclick="closePopup('popup1')">×</button>
+      <h2>hi Danny ♡</h2>
+      <p>Someone wanted to make your day a little cuter.</p>
+    </div>
+  </div>
+
+  <div class="popup" id="popup2">
+    <div class="popup-box">
+      <button class="close" onclick="closePopup('popup2')">×</button>
+      <h2>gift one 🎁</h2>
+      <p>You deserve a day that feels as sweet as cake and as calm as clouds.</p>
+    </div>
+  </div>
+
+  <div class="popup" id="popup3">
+    <div class="popup-box">
+      <button class="close" onclick="closePopup('popup3')">×</button>
+      <h2>gift two 🌷</h2>
+      <p>I hope you smile today. Like actually smile. Not the fake polite one.</p>
+    </div>
+  </div>
+
+  <div class="popup" id="popup4">
+    <div class="popup-box">
+      <button class="close" onclick="closePopup('popup4')">×</button>
+      <h2>gift three ⭐</h2>
+      <p>You make things feel lighter without even trying.</p>
+    </div>
+  </div>
+
+  <div class="popup" id="popup5">
+    <div class="popup-box">
+      <button class="close" onclick="closePopup('popup5')">×</button>
+      <h2>gift four 🧁</h2>
+      <p>Today is officially Danny Day. Everyone else can wait.</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

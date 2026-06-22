@@ -7,6 +7,10 @@ function closePopup(id) {
   document.getElementById(id).style.display = "none";
 }
 
+function openEnvelope() {
+  document.querySelector(".envelope").classList.toggle("open");
+}
+
 function blowCandles() {
   document.querySelector(".candles").classList.add("out");
   document.getElementById("wishText").innerText =

@@ -4,49 +4,60 @@ function openPopup(id) {
 }
 
 function closePopup(id) {
-  const popup = document.getElementById(id);
-  popup.style.display = "none";
-
-  if (id === "popup2") {
-    const envelope = document.querySelector(".envelope");
-    const drawingCard = document.querySelector(".drawing-card");
-    const tapNote = document.querySelector(".tap-note");
-
-    envelope.classList.remove("open");
-    drawingCard.classList.remove("show");
-    tapNote.style.display = "block";
-  }
+  document.getElementById(id).style.display = "none";
 }
 
 function openEnvelope() {
-  const envelope = document.querySelector(".envelope");
-  const drawingCard = document.querySelector(".drawing-card");
-  const tapNote = document.querySelector(".tap-note");
-
-  envelope.classList.add("open");
-
-  setTimeout(() => {
-    drawingCard.classList.add("show");
-    tapNote.style.display = "none";
-  }, 500);
+  document.querySelector(".envelope").classList.add("open");
 }
 
 function blowCandles() {
   document.querySelector(".candles").classList.add("out");
+
   document.getElementById("wishText").innerText =
     "wish made. i hope it comes true ♡";
+
+  confetti();
+}
+
+function showFortune() {
+  const fortunes = [
+    "extra cake is mandatory.",
+    "birthday boy gets unlimited wishes today.",
+    "you have unlocked: good vibes only.",
+    "today's rule: no overthinking, just cake.",
+    "fortune says: you deserve something sweet."
+  ];
+
+  const randomFortune = fortunes[Math.floor(Math.random() * fortunes.length)];
+
+  document.getElementById("fortuneText").innerText = randomFortune;
+
+  confetti();
+}
+
+function mirrorSparkle() {
+  const mirrorText = document.querySelector(".mirror p");
+
+  mirrorText.innerText = "handsome birthday boy detected";
+
   confetti();
 }
 
 function createHeart() {
   const heart = document.createElement("div");
+
   heart.className = "heart";
 
   const icons = ["♡", "💗", "✨", "🌸", "⭐", "🫧"];
-  heart.innerText = icons[Math.floor(Math.random() * icons.length)];
+
+  heart.innerText =
+    icons[Math.floor(Math.random() * icons.length)];
 
   heart.style.left = Math.random() * 100 + "vw";
-  heart.style.animationDuration = Math.random() * 3 + 4 + "s";
+
+  heart.style.animationDuration =
+    Math.random() * 3 + 4 + "s";
 
   document.body.appendChild(heart);
 
@@ -62,10 +73,16 @@ function confetti() {
 
   for (let i = 0; i < 35; i++) {
     const piece = document.createElement("div");
+
     piece.className = "confetti";
-    piece.innerText = icons[Math.floor(Math.random() * icons.length)];
+
+    piece.innerText =
+      icons[Math.floor(Math.random() * icons.length)];
+
     piece.style.left = Math.random() * 100 + "vw";
-    piece.style.animationDuration = Math.random() * 2 + 2 + "s";
+
+    piece.style.animationDuration =
+      Math.random() * 2 + 2 + "s";
 
     document.body.appendChild(piece);
 
@@ -77,9 +94,13 @@ function confetti() {
 
 document.addEventListener("mousemove", function (e) {
   const sparkle = document.createElement("div");
+
   sparkle.className = "sparkle";
+
   sparkle.innerText = "✨";
+
   sparkle.style.left = e.clientX + "px";
+
   sparkle.style.top = e.clientY + "px";
 
   document.body.appendChild(sparkle);

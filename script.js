@@ -23,10 +23,8 @@ function blowCandles() {
 function showFortune() {
   const fortunes = [
     "extra cake is mandatory.",
-    "birthday boy gets unlimited wishes today.",
-    "you have unlocked: good vibes only.",
-    "today's rule: no overthinking, just cake.",
-    "fortune says: you deserve something sweet."
+    "unlmited wishes.",
+    "more cake."
   ];
 
   const randomFortune = fortunes[Math.floor(Math.random() * fortunes.length)];
@@ -36,13 +34,6 @@ function showFortune() {
   confetti();
 }
 
-function mirrorSparkle() {
-  const mirrorText = document.querySelector(".mirror p");
-
-  mirrorText.innerText = "handsome birthday boy detected";
-
-  confetti();
-}
 
 function createHeart() {
   const heart = document.createElement("div");
@@ -69,7 +60,7 @@ function createHeart() {
 setInterval(createHeart, 500);
 
 function confetti() {
-  const icons = ["🎉", "💖", "✨", "🌷", "⭐", "🧁"];
+  const icons = ["🎉", "✨", "🌷", "⭐", "🧁"];
 
   for (let i = 0; i < 35; i++) {
     const piece = document.createElement("div");
@@ -95,9 +86,9 @@ function confetti() {
 document.addEventListener("mousemove", function (e) {
   const sparkle = document.createElement("div");
 
-  sparkle.className = "sparkle";
+  sparkle.className = "cake";
 
-  sparkle.innerText = "✨";
+  sparkle.innerText = "🍰";
 
   sparkle.style.left = e.clientX + "px";
 

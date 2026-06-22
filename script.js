@@ -15,7 +15,7 @@ function blowCandles() {
   document.querySelector(".candles").classList.add("out");
 
   document.getElementById("wishText").innerText =
-    "wish made. i hope it comes true ♡";
+    "wish made!";
 
   confetti();
 }
